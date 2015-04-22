@@ -40,10 +40,6 @@
 
 <p>Raspberry Pi is an inexpensive computing hardware that generates little heat, draws little power, and can run "in the basement" silently without having to think about it. </p>
 
-<pre><code>Example text
-Example two
-</code></pre>
-
 <h3>
 <a id="background" class="anchor" href="#background" aria-hidden="true"><span class="octicon octicon-link"></span></a>Background</h3>
 
@@ -54,20 +50,26 @@ Example two
 <h3>
 <a id="parts-list--total-cost-80" class="anchor" href="#parts-list--total-cost-80" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parts List  (total cost ~$80)</h3>
 
-<pre><code>* [Raspberry Pi 2 - Model B](https://www.adafruit.com/products/2358) (~$40)
-* [Raspberry Pi Case](https://www.adafruit.com/products/2285) (~$5)
-* [MicroSD card with 64 GB of storage](http://amzn.com/B00R7CSHWW) (~$25)
-* [Mirco USB charger that you can dedicate to the Raspberry Pi](https://www.adafruit.com/products/1995) (~$8)
+<ul>
+<li>
+<a href="https://www.adafruit.com/products/2358">Raspberry Pi 2 - Model B</a> (~$40)</li>
+<li>
+<a href="https://www.adafruit.com/products/2285">Raspberry Pi Case</a> (~$5)</li>
+<li>
+<a href="http://amzn.com/B00R7CSHWW">MicroSD card with 64 GB of storage</a> (~$25)</li>
+<li><p><a href="https://www.adafruit.com/products/1995">Mirco USB charger that you can dedicate to the Raspberry Pi</a> (~$8)</p></li>
+<li><p>Temporarily you will need a keyboard and monitor that supports HDMI to make things easier. You don't need this technically, but it sure makes the initial config process much easier.</p></li>
+</ul>
 
-* Temporarily you will need a keyboard and monitor that supports HDMI to make things easier. You don't need this technically, but it sure makes the initial config process much easier.
+<h3>
+<a id="steps-to-follow" class="anchor" href="#steps-to-follow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Steps to Follow</h3>
 
-</code></pre>
+<ol>
+<li><p>64 GB MicroSD card: The blockchain is growing quickly, so I felt 64 GB was a better size of storage. The card came formatted as exfat, instead of fat32. The SDformatter app they recommend only formatted as exfat, so what to do? Since I run a Mac, I just used the built-in Disk Utility and formatted as "MS-DOS (FAT)," which is really fat32. </p></li>
+<li><p>I chose to install NOOBS to make installing Raspberry Pi easier. NOOBS is kind of a boot manager/OS selector all in one that makes getting started with Raspberry Pi super easy. Judge me all you want, it's cool, but I went that route and it was as easy as advertised.</p></li>
+</ol>
 
-<p>The guide listed above is quite good. Here are some things that would have made it easier.</p>
-
-<p>64 GB MicroSD card: The blockchain is growing quickly, so I felt 64 GB was a better size of storage. The card came formatted as exfat, instead of fat32. The SDformatter app they recommend only formatted as exfat, so what to do? Since I run a Mac, I just used the built-in Disk Utility and formatted as "MS-DOS (FAT)," which is really fat32. 
-I chose to install NOOBS to make installing Raspberry Pi easier. NOOBS is kind of a boot manager/OS selector all in one that makes getting started with Raspberry Pi super easy. Judge me all you want, it's cool, but I went that route and it was as easy as advertised.
-In my opinion, don't install any of the wallet software. This is just a full node to help relay transactions, etc. It also makes the installation easier. Feel free to use one of the countless other free wallets out there.
+<p>In my opinion, don't install any of the wallet software. This is just a full node to help relay transactions, etc. It also makes the installation easier. Feel free to use one of the countless other free wallets out there.
 As you are running all of the apt-get commands in the tutorial - add this one to the end: sudo apt-get install libtool (you will need it and the main article doesn't cover it, but it is in the comments)
 When you clone the git respository, change the version to the current version (in my case 0.10)
 Conclusion</p>
