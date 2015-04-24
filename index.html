@@ -69,7 +69,22 @@
 
 <ol>
 <li><p><strong>Prepare the MicroSD Card:</strong> The blockchain is growing quickly (30+ GBs at the time of this writing), so I felt 64 GB was a good size for the Raspberry Pi's storage. I suppose you could go for 128 GBs to be even more future-proof, if you are willing to spend the money. The MicroSD card will likely come formatted as exfat, instead of FAT32, but the Raspberry Pi needs FAT32. I recommend using the built-in tools on Windows or Mac OSX to format the MicroSD. If you only have a Linux box to start, you probably already know how to format the microSD card. Since I run a Mac, I just used the built-in Disk Utility and formatted as "MS-DOS (FAT)," which is really FAT32. </p></li>
-<li><p><strong>Install the operating system:</strong> Installing software on a Raspberry Pi can be mildly complicated. I suggest using their <a href="https://www.raspberrypi.org/documentation/installation/noobs.md">NOOBS</a> install manager to make it painless. Just follow the link for [NOOBS][<a href="https://www.raspberrypi.org/documentation/installation/noobs.md">https://www.raspberrypi.org/documentation/installation/noobs.md</a>), download the files and copy them to your FAT32 microSD card and boot. It really is that easy to get started.</p></li>
+<li><p><strong>Install the operating system:</strong> Installing software on a Raspberry Pi can be mildly complicated. I suggest using their <a href="https://www.raspberrypi.org/documentation/installation/noobs.md">NOOBS</a> install manager to make it painless. Just follow the link for <a href="https://www.raspberrypi.org/documentation/installation/noobs.md">NOOBS</a>, download the files and copy them to your FAT32 microSD card and boot. It really is that easy to get started.</p></li>
+<li><p><strong>Update Raspberry Pi:</strong> </p></li>
+</ol>
+
+<pre><code>sudo raspi-config
+</code></pre>
+
+<p>I added "en_US.UTF-8 UTF-8" to the locale list and set my time zone to be accurate to my location. </p>
+
+<pre><code>sudo reboot
+
+</code></pre>
+
+<p>Just to keep everything fresh.</p>
+
+<ol>
 <li><p><strong>Assemble the Raspberry Pi:</strong> I chose to install NOOBS to make installing Raspberry Pi easier. NOOBS is kind of a boot manager/OS selector all in one that makes getting started with Raspberry Pi super easy. Judge me all you want, it's cool, but I went that route and it was as easy as advertised.</p></li>
 <li><p><strong>Boot and Configure the Raspberry Pi:</strong></p></li>
 </ol>
