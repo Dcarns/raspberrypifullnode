@@ -69,14 +69,14 @@
 
 <ol>
 <li><p><strong>Prepare the MicroSD Card:</strong> The blockchain is growing quickly (30+ GBs at the time of this writing), so I felt 64 GB was a good size for the Raspberry Pi's storage. I suppose you could go for 128 GBs to be even more future-proof, if you are willing to spend the money. The MicroSD card will likely come formatted as exfat, instead of FAT32, but the Raspberry Pi needs FAT32. I recommend using the built-in tools on Windows or Mac OSX to format the MicroSD. If you only have a Linux box to start, you probably already know how to format the microSD card. Since I run a Mac, I just used the built-in Disk Utility and formatted as "MS-DOS (FAT)," which is really FAT32. </p></li>
-<li><p><strong>Install the operating system:</strong> </p></li>
+<li><p><strong>Install the operating system:</strong> Installing software on a Raspberry Pi can be mildly complicated. I suggest using their <a href="https://www.raspberrypi.org/documentation/installation/noobs.md">NOOBS</a> install manager to make it painless. Just follow the link for [NOOBS][<a href="https://www.raspberrypi.org/documentation/installation/noobs.md">https://www.raspberrypi.org/documentation/installation/noobs.md</a>), download the files and copy them to your FAT32 microSD card and boot. It really is that easy to get started.</p></li>
 <li><p><strong>Assemble the Raspberry Pi:</strong> I chose to install NOOBS to make installing Raspberry Pi easier. NOOBS is kind of a boot manager/OS selector all in one that makes getting started with Raspberry Pi super easy. Judge me all you want, it's cool, but I went that route and it was as easy as advertised.</p></li>
 <li><p><strong>Boot and Configure the Raspberry Pi:</strong></p></li>
 </ol>
 
 <p>In my opinion, don't install any of the wallet software. This is just a full node to help relay transactions, etc. It also makes the installation easier. Feel free to use one of the countless other free wallets out there.
 As you are running all of the apt-get commands in the tutorial - add this one to the end: sudo apt-get install libtool (you will need it and the main article doesn't cover it, but it is in the comments)
-When you clone the git respository, change the version to the current version (in my case 0.10)
+When you clone the git repository, change the version to the current version (in my case 0.10)
 Conclusion</p>
 
 <p>In the end, it only took about 1-2 hours to get everything set up and then another 36-48 hours to have the blockchain sync'd up. </p>
