@@ -85,12 +85,20 @@ sudo reboot
 sudo apt-get upgrade
 </code></pre>
 
-<p>Install dependances:</p>
+<p>Install dependencies (broken up here to show more cleanly - you can do one apt-get call if you want):</p>
 
-<pre><code>sudo apt-get install build-essential autoconf libssl-dev 
-libboost-dev libboost-chrono-dev libboost-filesystem-dev
-libboost-program-options-dev libboost-system-dev 
-libboost-test-dev libboost-thread-dev
+<pre><code>sudo apt-get install build-essential autoconf libssl-dev libboost-dev 
+sudo apt-get install libboost-chrono-dev libboost-filesystem-dev
+sudo apt-get install libboost-program-options-dev libboost-system-dev 
+sudo apt-get install libboost-test-dev libboost-thread-dev libtool
+</code></pre>
+
+<p>Prepare for and download bitcoin source code:</p>
+
+<pre><code>mkdir ~/bin
+cd ~/bin
+git clone -b 0.10 https://github.com/bitcoin/bitcoin.git
+cd bitcoin/
 </code></pre>
 
 <ol>
