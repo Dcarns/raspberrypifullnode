@@ -73,16 +73,22 @@
 <li><p><strong>Update Raspberry Pi:</strong> </p></li>
 </ol>
 
+<p>Add "en_US.UTF-8 UTF-8" to the locale list and set your time zone and then reboot: </p>
+
 <pre><code>sudo raspi-config
+sudo reboot
 </code></pre>
 
-<p>I added "en_US.UTF-8 UTF-8" to the locale list and set my time zone to be accurate to my location. </p>
+<p>Keep everything fresh:</p>
 
-<pre><code>sudo reboot
-
+<pre><code>sudo apt-get update
+sudo apt-get upgrade
 </code></pre>
 
-<p>Just to keep everything fresh.</p>
+<p>Install dependances:</p>
+
+<pre><code>sudo apt-get install build-essential autoconf libssl-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-test-dev libboost-thread-dev
+</code></pre>
 
 <ol>
 <li><p><strong>Assemble the Raspberry Pi:</strong> I chose to install NOOBS to make installing Raspberry Pi easier. NOOBS is kind of a boot manager/OS selector all in one that makes getting started with Raspberry Pi super easy. Judge me all you want, it's cool, but I went that route and it was as easy as advertised.</p></li>
