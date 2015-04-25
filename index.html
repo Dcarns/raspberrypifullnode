@@ -101,6 +101,13 @@ git clone -b 0.10 https://github.com/bitcoin/bitcoin.git
 cd bitcoin/
 </code></pre>
 
+<p>Configure and compile the source code:</p>
+
+<pre><code>./autogen.sh
+./configure CPPFLAGS="-I/usr/local/BerkeleyDB.4.8/include -O2" LDFLAGS="-L/usr/local/BerkeleyDB.4.8/lib" --disable-wallet
+make
+</code></pre>
+
 <ol>
 <li><p><strong>Assemble the Raspberry Pi:</strong> I chose to install NOOBS to make installing Raspberry Pi easier. NOOBS is kind of a boot manager/OS selector all in one that makes getting started with Raspberry Pi super easy. Judge me all you want, it's cool, but I went that route and it was as easy as advertised.</p></li>
 <li><p><strong>Boot and Configure the Raspberry Pi:</strong></p></li>
