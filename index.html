@@ -60,6 +60,7 @@
 <a href="https://www.adafruit.com/products/2285">Raspberry Pi Case</a> (~$5)</li>
 <li>
 <a href="http://amzn.com/B00R7CSHWW">MicroSD card with 64 GB of storage</a> (~$25)</li>
+<li>Ethernet CAT45 cable (assuming you have one around somewhere)</li>
 <li><p><a href="https://www.adafruit.com/products/1995">Mirco USB charger that you can dedicate to the Raspberry Pi</a> (~$8)</p></li>
 <li><p>(Temporarily you will need a keyboard and monitor that supports HDMI to make things easier. You don't need this technically, but it sure makes the initial config process much easier.)</p></li>
 </ul>
@@ -69,8 +70,15 @@
 
 <ol>
 <li><p><strong>Prepare the MicroSD Card:</strong> The blockchain is growing quickly (30+ GBs at the time of this writing), so I felt 64 GB was a good size for the Raspberry Pi's storage. I suppose you could go for 128 GBs to be even more future-proof, if you are willing to spend the money. The MicroSD card will likely come formatted as exfat, instead of FAT32, but the Raspberry Pi needs FAT32. I recommend using the built-in tools on Windows or Mac OSX to format the MicroSD. If you only have a Linux box to start, you probably already know how to format the microSD card. Since I run a Mac, I just used the built-in Disk Utility and formatted as "MS-DOS (FAT)," which is really FAT32. </p></li>
-<li><p><strong>Install the operating system:</strong> Installing software on a Raspberry Pi can be mildly complicated. I suggest using their <a href="https://www.raspberrypi.org/documentation/installation/noobs.md">NOOBS</a> install manager to make it painless. Just follow the link for <a href="https://www.raspberrypi.org/documentation/installation/noobs.md">NOOBS</a>, download the files and copy them to your FAT32 microSD card and boot. It really is that easy to get started.</p></li>
-<li><p><strong>Update Raspberry Pi:</strong> </p></li>
+<li><p><strong>Install the operating system:</strong> Installing software on a Raspberry Pi can be mildly complicated. I suggest using their <a href="https://www.raspberrypi.org/documentation/installation/noobs.md">NOOBS</a> install manager to make it painless. Just follow the link for <a href="https://www.raspberrypi.org/documentation/installation/noobs.md">NOOBS</a>, download the files and copy them to your FAT32 microSD card and get ready to turning things on.</p></li>
+<li><p><strong>Initial configuration:</strong> There are ways to avoid using a keyboard, video display, and mouse (KVM) altogether. But in the interest of keeping things simple I recommend putting your Raspberry Pi into its case, <strong>then insert the microSD card</strong> into your Raspberry Pi (trust me, it is easier to put the case on first), and then hook up the KVM cables, plugin the ethernet cable, and plugin the power. </p></li>
+</ol>
+
+<p>At boot up, select Raspbian as your operating system and let NOOBS get the OS set up. </p>
+
+<ol>
+<li>
+<strong>Update Raspberry Pi:</strong> </li>
 </ol>
 
 <p>Add "en_US.UTF-8 UTF-8" to the locale list and set your time zone and then reboot: </p>
