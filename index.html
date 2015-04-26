@@ -28,15 +28,15 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h1>
-<a id="why-a-bitcoin-full-node" class="anchor" href="#why-a-bitcoin-full-node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why a Bitcoin Full Node?</h1>
+          <h2>
+<a id="why-a-bitcoin-full-node" class="anchor" href="#why-a-bitcoin-full-node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why a Bitcoin Full Node?</h2>
 
 <p>Bitcoin is a digital currently supported by a peer-to-peer network. In order to run efficiently and effectively, it needs peers, run by different people....and the more the better.</p>
 
 <p>This tutorial will describe how to create a Bitcoin "full node" (a Bitcoin server that contains the full blockchain and propagates transactions throughout the Bitcoin network via peers). This system <em>will not</em> mine for Bitcoins...it <em>will</em> keep the Bitcoin peer-to-peer network healthy and strong. For a detailed explanation for why this is important, read this article <a href="https://medium.com/@lopp/bitcoin-nodes-how-many-is-enough-9b8e8f6fd2cf">about Bitcoin full nodes</a>.</p>
 
-<h1>
-<a id="why-a-raspberry-pi" class="anchor" href="#why-a-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why a Raspberry Pi?</h1>
+<h2>
+<a id="why-a-raspberry-pi" class="anchor" href="#why-a-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why a Raspberry Pi?</h2>
 
 <p>Raspberry Pi is an inexpensive computing hardware platform that generates little heat, draws little power, and can run silently 24 hours a day without having to think about it. </p>
 
@@ -45,10 +45,12 @@
 
 <p>I decided to create my own Bitcoin full node on a Raspberry Pi. Being a good Bitcoin citizen means running a full node, in my opinion. I wanted to use a Raspberry Pi because it is low cost, generates little heat, draws little power, and can run "in the basement" silently without having to think about it.</p>
 
+<p>My Raspberry Pi full node is up and running, performing well, has about 75 peers and is relaying transactions to the Bitcoin network. I have to say, ever since I got it set up it has been low maintenance. </p>
+
 <p>I am going to assume that if you are reading this to create your own Raspberry Pi bitcoin full node, then you already know a little bit about linux, electronics, and running command line tools like SSH. </p>
 
-<h1>
-<a id="parts-list--total-cost-80" class="anchor" href="#parts-list--total-cost-80" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parts List  (total cost ~$80)</h1>
+<h2>
+<a id="parts-list--total-cost-80" class="anchor" href="#parts-list--total-cost-80" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parts List  (total cost ~$80)</h2>
 
 <ul>
 <li>
@@ -57,13 +59,13 @@
 <a href="https://www.adafruit.com/products/2285">Raspberry Pi Case</a> (~$5)</li>
 <li>
 <a href="http://amzn.com/B00R7CSHWW">MicroSD card with 64 GB of storage</a> (~$25)</li>
-<li>Ethernet CAT45 cable (assuming you have one around somewhere)</li>
 <li><p><a href="https://www.adafruit.com/products/1995">Mirco USB charger that you can dedicate to the Raspberry Pi</a> (~$8)</p></li>
-<li><p>(Temporarily you will need a keyboard and monitor that supports HDMI to make things easier. You don't need this technically, but it sure makes the initial config process much easier.)</p></li>
+<li><p>Ethernet CAT45 cable (assuming you have one around somewhere)</p></li>
+<li>(Temporarily you will need a keyboard and monitor that supports HDMI to make things easier. You don't need this technically, but it sure makes the initial config process much easier.)</li>
 </ul>
 
-<h1>
-<a id="steps-to-follow" class="anchor" href="#steps-to-follow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Steps to Follow</h1>
+<h2>
+<a id="steps-to-follow" class="anchor" href="#steps-to-follow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Steps to Follow</h2>
 
 <ol>
 <li><p><strong>Prepare the MicroSD Card:</strong> The blockchain is growing quickly (30+ GBs at the time of this writing), so I felt 64 GB was a good size for the Raspberry Pi's storage. I suppose you could go for 128 GBs to be even more future-proof, if you are willing to spend the money. The MicroSD card will likely come formatted as exfat, instead of FAT32, but the Raspberry Pi needs FAT32. I recommend using the built-in tools on Windows or Mac OSX to format the MicroSD. If you only have a Linux box to start, you probably already know how to format the microSD card. Since I run a Mac, I just used the built-in Disk Utility and formatted as "MS-DOS (FAT)," which is really FAT32. </p></li>
@@ -112,16 +114,20 @@ make
 sudo make install
 </code></pre>
 </li>
-<li><p><strong>Assemble the Raspberry Pi:</strong> I chose to install NOOBS to make installing Raspberry Pi easier. NOOBS is kind of a boot manager/OS selector all in one that makes getting started with Raspberry Pi super easy. Judge me all you want, it's cool, but I went that route and it was as easy as advertised.</p></li>
-<li><p><strong>Boot and Configure the Raspberry Pi:</strong></p></li>
+<li>
+<p><strong>Verify your Bitcoin full node is working:</strong> Assuming all went well (above) you can just type the following in your command line:</p>
+
+<pre><code>bitcoind &amp;
+</code></pre>
+
+<p>The &amp; at the end tells the app to run in the background so that your command line interface can be used for more commands. If you type the following you will see the status of your Bitcoin full node:</p>
+
+<pre><code>bitcoin-cli getinfo
+</code></pre>
+
+<p>It will likely tell you that it is loading the blockchain or tell you how many blocks have been loaded thus far.  If you made it this far, <em>congratulations!</em> Unfortunately, you are far from over.</p>
+</li>
 </ol>
-
-<p>In my opinion, don't install any of the wallet software. This is just a full node to help relay transactions, etc. It also makes the installation easier. Feel free to use one of the countless other free wallets out there.
-As you are running all of the apt-get commands in the tutorial - add this one to the end: sudo apt-get install libtool (you will need it and the main article doesn't cover it, but it is in the comments)
-When you clone the git repository, change the version to the current version (in my case 0.10)
-Conclusion</p>
-
-<p>In the end, it only took about 1-2 hours to get everything set up and then another 36-48 hours to have the blockchain sync'd up. </p>
 
 <p>Like this information and want to tip me:</p>
 
