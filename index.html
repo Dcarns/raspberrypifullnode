@@ -29,29 +29,26 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h1>
-<a id="under-development" class="anchor" href="#under-development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Under development</h1>
-
-<h2>
-<a id="why-a-bitcoin-full-node" class="anchor" href="#why-a-bitcoin-full-node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why a Bitcoin Full Node?</h2>
+<a id="why-a-bitcoin-full-node" class="anchor" href="#why-a-bitcoin-full-node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why a Bitcoin Full Node?</h1>
 
 <p>Bitcoin is a digital currently supported by a peer-to-peer network. In order to run efficiently and effectively, it needs peers, run by different people....and the more the better.</p>
 
 <p>This tutorial will describe how to create a Bitcoin "full node" (a Bitcoin server that contains the full blockchain and propagates transactions throughout the Bitcoin network via peers). This system <em>will not</em> mine for Bitcoins...it <em>will</em> keep the Bitcoin peer-to-peer network healthy and strong. For a detailed explanation for why this is important, read this article <a href="https://medium.com/@lopp/bitcoin-nodes-how-many-is-enough-9b8e8f6fd2cf">about Bitcoin full nodes</a>.</p>
 
-<h2>
-<a id="why-a-raspberry-pi" class="anchor" href="#why-a-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why a Raspberry Pi?</h2>
+<h1>
+<a id="why-a-raspberry-pi" class="anchor" href="#why-a-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why a Raspberry Pi?</h1>
 
 <p>Raspberry Pi is an inexpensive computing hardware platform that generates little heat, draws little power, and can run silently 24 hours a day without having to think about it. </p>
 
-<h2>
-<a id="background" class="anchor" href="#background" aria-hidden="true"><span class="octicon octicon-link"></span></a>Background</h2>
+<h1>
+<a id="background" class="anchor" href="#background" aria-hidden="true"><span class="octicon octicon-link"></span></a>Background</h1>
 
 <p>I decided to create my own Bitcoin full node on a Raspberry Pi. Being a good Bitcoin citizen means running a full node, in my opinion. I wanted to use a Raspberry Pi because it is low cost, generates little heat, draws little power, and can run "in the basement" silently without having to think about it.</p>
 
 <p>I am going to assume that if you are reading this to create your own Raspberry Pi bitcoin full node, then you already know a little bit about linux, electronics, and running command line tools like SSH. </p>
 
-<h2>
-<a id="parts-list--total-cost-80" class="anchor" href="#parts-list--total-cost-80" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parts List  (total cost ~$80)</h2>
+<h1>
+<a id="parts-list--total-cost-80" class="anchor" href="#parts-list--total-cost-80" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parts List  (total cost ~$80)</h1>
 
 <ul>
 <li>
@@ -65,8 +62,8 @@
 <li><p>(Temporarily you will need a keyboard and monitor that supports HDMI to make things easier. You don't need this technically, but it sure makes the initial config process much easier.)</p></li>
 </ul>
 
-<h2>
-<a id="steps-to-follow" class="anchor" href="#steps-to-follow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Steps to Follow</h2>
+<h1>
+<a id="steps-to-follow" class="anchor" href="#steps-to-follow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Steps to Follow</h1>
 
 <ol>
 <li><p><strong>Prepare the MicroSD Card:</strong> The blockchain is growing quickly (30+ GBs at the time of this writing), so I felt 64 GB was a good size for the Raspberry Pi's storage. I suppose you could go for 128 GBs to be even more future-proof, if you are willing to spend the money. The MicroSD card will likely come formatted as exfat, instead of FAT32, but the Raspberry Pi needs FAT32. I recommend using the built-in tools on Windows or Mac OSX to format the MicroSD. If you only have a Linux box to start, you probably already know how to format the microSD card. Since I run a Mac, I just used the built-in Disk Utility and formatted as "MS-DOS (FAT)," which is really FAT32. </p></li>
