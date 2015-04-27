@@ -128,6 +128,11 @@ sudo make install
 <p>It will likely tell you that it is loading the blockchain or tell you how many blocks have been loaded thus far.  If you made it this far, <em>congratulations!</em> Unfortunately, you are far from over.</p>
 </li>
 <li>
+<p><strong>Side load the blockchain:</strong> In my experience, the Raspberry Pi 2 with its 1 GB of RAM and quad processors was not able to synchronize the blockchain on its own. Once it gets to about block 300,000 it starts to run out of RAM and all of the coaxing in the world does not help. Again, just my experience and newer versions of Bitcoin may resolve this issue. </p>
+
+<p>Solution? Synchronize the blockchain on your primary machine and then simply copy your personal seed of the Bitcoin blockchain to your Raspberry Pi full node. </p>
+</li>
+<li>
 <p><strong>Make sure port forwarding is turned on in your router:</strong> One more, quite important thing...you need to enable port forwarding on your router to point to <em>port 8333</em> to your internal Bitcoin full node IP address. I'm not sure if you need both TCP and UDP forwarded, but I did both and everything is working great. How do you do this? Each router is different and each cable/fiber/DSL provider has instructions somewhere. Your router, in fact, might automatically do it for you, since gaming machines like the XBOX and Playstation benefit from port forwarding and ISPs don't want to deal with explaining how to set it up, so they auto-detect services you are running that need port forwarding and make it happen. </p>
 
 <p>Why do you need port forwarding? Basically it allows other Bitcoin peers to automatically connect to <em>you</em> without the need for you to invite them first. Without port forwarding you will have far fewer peers and not allow the Bitcoin network to be healthy. So much so, that you cannot really claim you are running a full node without port forwarding (or wide open IP access) enabled.</p>
