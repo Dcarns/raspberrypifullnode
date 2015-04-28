@@ -35,6 +35,8 @@
 
 <p>This tutorial will describe how to create a Bitcoin "full node" (a Bitcoin server that contains the full blockchain and propagates transactions throughout the Bitcoin network via peers). This system <em>will not</em> mine for Bitcoins...it <em>will</em> keep the Bitcoin peer-to-peer network healthy and strong. For a detailed explanation for why this is important, read this article <a href="https://medium.com/@lopp/bitcoin-nodes-how-many-is-enough-9b8e8f6fd2cf">about Bitcoin full nodes</a>.</p>
 
+<p>Also please note this will be a "headless" server...meaning we will not be using a GUI to configure Bitcoin or check to see how things are running. In fact, once the server is set up, you will only interact with it using command line calls over SSH. The idea is to have this full node simple, low-power, and something that "just runs" in your basement, closet, etc.</p>
+
 <h2>
 <a id="why-a-raspberry-pi" class="anchor" href="#why-a-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why a Raspberry Pi?</h2>
 
@@ -73,7 +75,7 @@
 <li>
 <p><strong>Initial configuration:</strong> There are ways to avoid using a keyboard, video display, and mouse (KVM) altogether. But in the interest of keeping things simple I recommend putting your Raspberry Pi into its case, <strong>then insert the microSD card</strong> into your Raspberry Pi (trust me, it is easier to put the case on first), and then hook up the KVM cables, plugin the ethernet cable, and plugin the power. </p>
 
-<p>At boot up, select Raspbian as your operating system and let NOOBS get the OS set up. </p>
+<p>At boot up, select Raspbian as your operating system and let NOOBS get the OS set up. Do not bother with any setting that will launch "startx" (or the GUI interface), since this full node will only be configured via command line.</p>
 </li>
 <li>
 <p><strong>Update Raspberry Pi:</strong> </p>
@@ -126,6 +128,11 @@ sudo make install
 </code></pre>
 
 <p>It will likely tell you that it is loading the blockchain or tell you how many blocks have been loaded thus far.  If you made it this far, <em>congratulations!</em> Unfortunately, you are far from over.</p>
+
+<p>For now, just stop the Bitcoin server you just worked so hard to start with the following command:</p>
+
+<pre><code>bitcoin-cli stop
+</code></pre>
 </li>
 <li>
 <p><strong>Side load the blockchain:</strong> In my experience, the Raspberry Pi 2 with its 1 GB of RAM and quad processors was not able to synchronize the blockchain on its own. Once it gets to about block 300,000 it starts to run out of RAM and all of the coaxing in the world does not help. Again, just my experience and newer versions of Bitcoin may resolve this issue. </p>
