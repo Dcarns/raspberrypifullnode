@@ -133,11 +133,12 @@ sudo make install
 </code></pre>
 </li>
 <li>
-<p><strong>Side-load the blockchain:</strong> In my experience, the Raspberry Pi 2 with its 1 GB of RAM and quad processors was not able to synchronize the blockchain on its own. Once it gets to about block 300,000 it starts to run out of RAM and all of the coaxing in the world does not help. Again, just my experience and newer versions of Bitcoin may resolve this issue. </p>
+<p><strong>Side-load the blockchain:</strong> In my experience, the Raspberry Pi 2 with its 1 GB of RAM and quad processors was not able to synchronize the blockchain on its own. Once it gets to about block 300,000 it starts to run out of RAM and all of the coaxing in the world does not help. (Note: one reader of this guide explained that you can control the RAM usage by starting the Bitcoin server with the following command 'bitcoind --dbcache=50 &amp;'. If you want to give it a try, start up the Bitcoin service using that switch and see if that will allow you to synchronize the blockchain without running out of RAM.) Again, just my experience and newer versions of Bitcoin may resolve this issue. </p>
 
 <p>Solution? Synchronize the blockchain on your primary machine and then simply copy your personal seed of the Bitcoin blockchain to your Raspberry Pi full node. The files you need are in the 'blocks' folder and the 'chainstate' folder. You can use the following command using SCP (basically SSH for copying files) to move the files from your main computer to your Raspberry Pi full node:</p>
 
-<pre><code>scp -r foo your_username@raspberrypiIPaddress:/some/remote/directory/bar
+<pre><code>scp -r blocks your_username@raspberrypiIPaddress:/home/pi/.bitcoin
+scp -r chainstate your_username@raspberrypiIPaddress:/home/pi/.bitcoin
 </code></pre>
 
 <p>Now you should be able to start up your bitcoin server again and start relaying Bitcoin transactions in realtime. Just execute the Bitcoin server command:</p>
