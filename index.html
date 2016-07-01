@@ -84,35 +84,11 @@
 sudo reboot
 </code></pre>
 
-<p>Keep everything fresh:</p>
-
-<pre><code>sudo apt-get update
-sudo apt-get upgrade
+<p>Download latest Bitcoin client by going to <a href="https://github.com/bitcoinclassic/bitcoinclassic/releases">release page</a>. Find the bitcoin-[version]-armhf-cli.tar.gz file and download onto your pi.</p>
+<pre><code>tar xf bitcoin-*cli.tar.gz
+sudo cp bitcoin-*/bin/bitcoind bitcoin-*/bin/bitcoin-cli /usr/bin/
 </code></pre>
 
-<p>Install dependencies (broken up here to show more cleanly - you can do one apt-get call if you want):</p>
-
-<pre><code>sudo apt-get install build-essential autoconf libssl-dev libboost-dev 
-sudo apt-get install libboost-chrono-dev libboost-filesystem-dev
-sudo apt-get install libboost-program-options-dev libboost-system-dev 
-sudo apt-get install libboost-test-dev libboost-thread-dev libtool
-</code></pre>
-
-<p>Prepare for and download bitcoin source code:</p>
-
-<pre><code>mkdir ~/bin
-cd ~/bin
-git clone -b v0.11.2 https://github.com/bitcoin/bitcoin.git
-cd bitcoin/
-</code></pre>
-
-<p>Configure and compile the source code; install to the bin directory (this will take 30+ minutes):</p>
-
-<pre><code>./autogen.sh
-./configure CPPFLAGS="-I/usr/local/BerkeleyDB.4.8/include -O2" LDFLAGS="-L/usr/local/BerkeleyDB.4.8/lib" --disable-wallet
-make
-sudo make install
-</code></pre>
 </li>
 <li>
 <p><strong>Verify your Bitcoin full node is working:</strong> Assuming all went well (above) you can just type the following in your command line:</p>
