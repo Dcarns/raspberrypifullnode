@@ -1,0 +1,8 @@
+title: Raspberrypifullnode
+description: How to Create Your Own Bitcoin Full Node With a Raspberry Pi
+google_analytics: UA-62136133-1
+show_downloads: true
+theme: jekyll-theme-architect
+
+gems:
+  - jekyll-mentions
